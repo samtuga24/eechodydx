@@ -12,9 +12,20 @@ import { Unlock } from './component/Unlock';
 import { Bills } from './background/Bills';
 import { Pay } from './component/Pay';
 
+import { gsap } from 'gsap'
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 function App() {
-
+  gsap.registerPlugin(useGSAP,ScrollTrigger);
+  // ScrollTrigger.create({
+  //   trigger: '#part',
+  //   pin: true,
+  //   start:"top top",
+  //   end:"+=300px",
+  //   pinSpacing: false
+  // })
   return (
     <>
       <Nav />

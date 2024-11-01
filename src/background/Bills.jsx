@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import yt from '../icons/ytube.svg'
 import x from '../icons/x.svg'
 import google from '../icons/google.svg'
@@ -7,7 +7,23 @@ import msg from '../icons/messenger.svg'
 import telegram from '../icons/telegram.svg'
 import tik from '../icons/tik.svg'
 import snap from '../icons/snap.svg'
+import { gsap } from 'gsap'
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+
 export const Bills = () => {
+    gsap.registerPlugin(useGSAP,ScrollTrigger);
+    const tl = gsap.timeline({
+        scrollTrigger:{
+            trigger: ".bills-wrap",
+            toggleActions: "restart none none none",
+        }
+    });
+    tl.fromTo('.n-1, .n-2',{y: '100vw'},{ y: '0vw', ease: "power4.inOut",stagger:0.2,duration: 2.2 })
+    tl.fromTo('.bills-header',{x: '-100vw'},{ x: '0vw', ease: "power4.inOut",stagger:0.2,duration: 1 },'<')
+
     return (
         <div className='bills-container'>
             <div className="bills-wrap">

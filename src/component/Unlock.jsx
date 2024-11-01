@@ -7,13 +7,24 @@ import ps from '../icons/ps.svg'
 import xbox from '../icons/xbox.svg'
 import ub from '../icons/ub.svg'
 import { gsap } from 'gsap'
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 export const Unlock = () => {
-  const tl = gsap.timeline()
-  useEffect(() => {
-    tl.fromTo('.lock-1',{y: '-100vw'},{ y: '0vw', ease: "power4.inOut",duration: 2.2 })
-    .fromTo('.lock-2',{y: '100vw'},{ y: '0vw', ease: "power4.inOut",duration: 2.2},'<')
+  // useEffect(() => {
+  //   tl.fromTo('.lock-1',{y: '-100vw'},{ y: '0vw', ease: "power4.inOut",duration: 2.2 })
+  //   .fromTo('.lock-2',{y: '100vw'},{ y: '0vw', ease: "power4.inOut",duration: 2.2},'<')
   
-  }, [])
+  // }, [])
+
+  gsap.registerPlugin(useGSAP,ScrollTrigger);
+  const tl = gsap.timeline({
+      scrollTrigger:{
+          trigger: ".unlock-wrap",
+          toggleActions: "restart none none none",
+      }
+  });
+  tl.fromTo('.lock-1, .lock-2',{y: '100vw'},{ y: '0vw', ease: "power4.inOut",stagger:0.2,duration: 2.5 })
+  
   return (
     <div className='unlock-container'>
       <div className='unlock-wrap'>

@@ -1320,6 +1320,7 @@ textarea{
   display: flex;
   justify-content: center;
   cursor: default;
+  z-index: 1;
 }
 
 .foot-wrap{
