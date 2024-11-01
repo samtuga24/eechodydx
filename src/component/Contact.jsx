@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 export const Contact = () => {
   const inputRef = useRef(null)
@@ -6,9 +6,44 @@ export const Contact = () => {
   const phoneRef = useRef(null)
   const messageRef = useRef(null)
 
+  const [first, setFirst] = useState(true)
+  const [second, setSecond] = useState(false)
+  const [third, setThird] = useState(false)
+
+  const firstFunc = () =>{
+      setFirst(true)
+      setSecond(false)
+      setThird(false)
+  }
+
+  const secondFunc = () =>{
+      setFirst(false)
+      setSecond(true)
+      setThird(false)
+  }
+
+  const thirdFunc = () =>{
+      setFirst(false)
+      setSecond(false)
+      setThird(true)
+
+  }
+  useEffect(()=>{
+      let firstInterval = setInterval(firstFunc, 2000)
+       let secondInterval = setInterval(secondFunc, 4000)
+       let thirdInterval = setInterval(thirdFunc, 6000)
+      clearInterval(firstInterval)
+      clearInterval(secondInterval)
+      clearInterval(thirdInterval)
+  },[])
+
+  // console.log("first" ,first)
+  // console.log("second" ,second)
+  // console.log("third" ,third)
+
 
   return (
-    <div className='contact-container'>
+    <div className='contact-container' id='contact'>
       <div className='contact-wrap'>
         <div className='contact-header'>Contact Our Team</div>
         <div className='contact-desc'>Whether you're a marketing pro looking for a smarter way to manage campaign expenses or someone seeking a more efficient way to handle personal purchases, our cards provide the flexibility, control, and security you need.</div>
@@ -17,11 +52,11 @@ export const Contact = () => {
             <div className='team-desc'>
               <div className='desc-wrap'>
                 <div className='team-num'>
-                  <div className='t-1'>1</div>
+                  <div className='t-1' id={first ? 'bg' : null}>1</div>
                 </div>
                 <div className='team-text'>
-                  <div className='t-header'>Contact Our Team</div>
-                  <div className='t-desc'>We're here for you! Whether you're starting out or need support, our team is ready to assist. Reach out for personalized guidance and get quick answers to your questions.</div>
+                  <div className='t-header' id={first ? 'active-h' : null}>Contact Our Team</div>
+                  <div className='t-desc' id={first ? 'active-desc' : null}>We're here for you! Whether you're starting out or need support, our team is ready to assist. Reach out for personalized guidance and get quick answers to your questions.</div>
                 </div>
               </div>
             </div>
@@ -29,11 +64,11 @@ export const Contact = () => {
             <div className='team-desc'>
               <div className='desc-wrap'>
                 <div className='team-num'>
-                  <div className='t-1'>2</div>
+                  <div className='t-1'  id={second ? 'bg' : null}>2</div>
                 </div>
                 <div className='team-text'>
-                  <div className='t-header'>Your Card Solution</div>
-                  <div className='t-desc'>Get the card that fits your needs—whether for personal or business use. Our solutions offer security, flexibility, and global access.</div>
+                  <div className='t-header'  id={second ? 'active-h' : null}>Your Card Solution</div>
+                  <div className='t-desc'  id={second ? 'active-desc' : null}>Get the card that fits your needs—whether for personal or business use. Our solutions offer security, flexibility, and global access.</div>
                 </div>
               </div>
             </div>
@@ -41,12 +76,12 @@ export const Contact = () => {
             <div className='team-desc'>
               <div className='desc-wrap'>
                 <div className='team-num'>
-                  <div className='t-1'>3</div>
+                  <div className='t-1'  id={third ? 'bg' : null}>3</div>
                 </div>
                 <div className='team-text'>
-                  <div className='t-header'>Complete Verification and Activate Solution</div>
+                  <div className='t-header' id={third ? 'active-h' : null}>Complete Verification and Activate Solution</div>
                   <div className='t-desc'>Quick and easy setup! Complete your verification and activate your card in just a few steps.
-                    <div className='t-step'>
+                    <div className='t-step'  id={third ? 'active-desc' : null}>
                       <ul><li>Step 1: Submit your details.</li></ul>
                       <ul><li>Step 2: Securely verify your identity.</li></ul>
                       <ul><li>Step 3: Activate and start using your card immediately!</li></ul>
