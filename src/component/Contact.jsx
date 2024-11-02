@@ -9,8 +9,9 @@ export const Contact = () => {
   const [first, setFirst] = useState(true)
   const [second, setSecond] = useState(false)
   const [third, setThird] = useState(false)
-  const arr = ["a","b","c"]
+
   const[currentIndex, setCurrentIndex]=useState(1) 
+  const arr = ["a","b","c"]
   const firstFunc = () =>{
     for(let i =0; i<=arr.length-1; i++){
       setCurrentIndex(i)
