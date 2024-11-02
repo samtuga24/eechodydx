@@ -9,35 +9,36 @@ export const Contact = () => {
   const [first, setFirst] = useState(true)
   const [second, setSecond] = useState(false)
   const [third, setThird] = useState(false)
-
+  const arr = ["a","b","c"]
+  const[currentIndex, setCurrentIndex]=useState(1) 
   const firstFunc = () =>{
-      setFirst(true)
-      setSecond(false)
-      setThird(false)
+    for(let i =0; i<=arr.length-1; i++){
+      setCurrentIndex(i)
+      console.log("current index", currentIndex)
+      if(i == 0){
+        setFirst(true)
+        setSecond(false)
+        setThird(false)
+      }
+      if(i == 1){
+        setFirst(false)
+        setSecond(true)
+        setThird(false)
+      }
+      if(i == 2){
+        setFirst(false)
+        setSecond(false)
+        setThird(true)
+      }
+    }
   }
 
-  const secondFunc = () =>{
-      setFirst(false)
-      setSecond(true)
-      setThird(false)
-  }
-
-  const thirdFunc = () =>{
-      setFirst(false)
-      setSecond(false)
-      setThird(true)
-
-  }
   useEffect(()=>{
-      let firstInterval = setInterval(firstFunc, 2000)
-       let secondInterval = setInterval(secondFunc, 4000)
-       let thirdInterval = setInterval(thirdFunc, 6000)
-      clearInterval(firstInterval)
-      clearInterval(secondInterval)
-      clearInterval(thirdInterval)
+    setInterval(firstFunc, currentIndex*2000)
   },[])
 
-  // console.log("first" ,first)
+
+  console.log("first" ,currentIndex)
   // console.log("second" ,second)
   // console.log("third" ,third)
 
@@ -55,9 +56,11 @@ export const Contact = () => {
                   <div className='t-1' id={first ? 'bg' : null}>1</div>
                 </div>
                 <div className='team-text'>
+                  
                   <div className='t-header' id={first ? 'active-h' : null}>Contact Our Team</div>
                   <div className='t-desc' id={first ? 'active-desc' : null}>We're here for you! Whether you're starting out or need support, our team is ready to assist. Reach out for personalized guidance and get quick answers to your questions.</div>
                 </div>
+                <div className="side-margin"></div>
               </div>
             </div>
 
@@ -80,7 +83,7 @@ export const Contact = () => {
                 </div>
                 <div className='team-text'>
                   <div className='t-header' id={third ? 'active-h' : null}>Complete Verification and Activate Solution</div>
-                  <div className='t-desc'>Quick and easy setup! Complete your verification and activate your card in just a few steps.
+                  <div className='t-desc' id={third ? 'active-h' : null}>Quick and easy setup! Complete your verification and activate your card in just a few steps.
                     <div className='t-step'  id={third ? 'active-desc' : null}>
                       <ul><li>Step 1: Submit your details.</li></ul>
                       <ul><li>Step 2: Securely verify your identity.</li></ul>
@@ -89,6 +92,7 @@ export const Contact = () => {
                   </div>
                 </div>
               </div>
+              
             </div>
           </div>
           <div className='contact-form'>
