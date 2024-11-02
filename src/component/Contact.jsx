@@ -9,40 +9,28 @@ export const Contact = () => {
   const [first, setFirst] = useState(true)
   const [second, setSecond] = useState(false)
   const [third, setThird] = useState(false)
-
-  const[currentIndex, setCurrentIndex]=useState(1) 
-  const arr = ["a","b","c"]
-  const firstFunc = () =>{
-    for(let i =0; i<=arr.length-1; i++){
-      setCurrentIndex(i)
-      console.log("current index", currentIndex)
-      if(i == 0){
-        setFirst(true)
-        setSecond(false)
-        setThird(false)
-      }
-      if(i == 1){
-        setFirst(false)
-        setSecond(true)
-        setThird(false)
-      }
-      if(i == 2){
-        setFirst(false)
-        setSecond(false)
-        setThird(true)
-      }
-    }
+  const firstFunc =()=>{
+    setFirst(true)
+    setSecond(false)
+    setThird(false)
   }
 
+  const secondFunc =()=>{
+    setFirst(false)
+    setSecond(true)
+    setThird(false)
+  }
+
+  const thirdFunc =()=>{
+    setFirst(false)
+    setSecond(false)
+    setThird(true)
+  }
   useEffect(()=>{
-    setInterval(firstFunc, currentIndex*2000)
+    setTimeout(firstFunc,2000)
+    setTimeout(secondFunc,4000)
+    setTimeout(thirdFunc,6000)
   },[])
-
-
-  console.log("first" ,currentIndex)
-  // console.log("second" ,second)
-  // console.log("third" ,third)
-
 
   return (
     <div className='contact-container' id='contact'>
