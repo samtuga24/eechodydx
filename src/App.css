@@ -601,7 +601,6 @@ body{
   display: flex;
   justify-content: center;
   cursor: default;
-  border: 2px solid red;
 }
 .contact-wrap{
   width: 90%;
