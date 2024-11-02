@@ -10,17 +10,17 @@ import purple from '../images/purple.png'
 import green from '../images/1.png'
 import main from '../images/main.png'
 export const Home = () => {
-  const tl = gsap.timeline()
-  useEffect(() => {
-    tl.fromTo('.m-header, .m-desc',{x: '-100vw'},{ x: '0vw', ease: "power4.inOut",stagger:0.2,duration: 2.2 })
+  // const tl = gsap.timeline()
+  // useEffect(() => {
+  //   tl.fromTo('.m-header, .m-desc',{x: '-100vw'},{ x: '0vw', ease: "power4.inOut",stagger:0.2,duration: 2.2 })
   
-  }, [])
+  // }, [])
   return (
     <div className='home-container'>
       <div className='home-wrap'>
         <div className='m-container'>
           <div className='m-wrap'>
-            <div className='m-header'>Cards designed for marketing campaigns and everyday purchases.</div>
+            <div className='m-header'>Cards Designed For Marketing Campaigns And Everyday Purchases.</div>
             <div className='m-desc'>Your Trusted Partner in Prepaid Cards for all your online payment.</div>
           </div>
         </div>
