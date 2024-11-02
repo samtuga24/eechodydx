@@ -32,16 +32,16 @@ export const Bills = () => {
                     <div className="n-1">
                         <div className="n-1-head">Native or social ads?</div>
                         <div className="n-1-icon-wrap">
-                            <div className="n-1-icon"><img src={fb} alt="" /></div>
-                            <div className="n-1-icon"><img src={google} alt="" /></div>
-                            <div className="n-1-icon"><img src={tik} alt="" /></div>
-                            <div className="n-1-icon"><img src={snap} alt="" /></div>
+                            <div className="nf-icon"><img src={fb} alt="" /></div>
+                            <div className="ng-icon"><img src={google} alt="" /></div>
+                            <div className="nt-icon"><img src={tik} alt="" /></div>
+                            <div className="ns-icon"><img src={snap} alt="" /></div>
                         </div>
                         <div className="n-icon-wrap-2">
-                            <div className="n-1-icon"><img src={yt} alt="" /></div>
-                            <div className="n-1-icon"><img src={msg} alt="" /></div>
-                            <div className="n-1-icon"><img src={x} alt="" /></div>
-                            <div className="n-1-icon"><img src={telegram} alt="" /></div>
+                            <div className="ny-icon"><img src={yt} alt="" /></div>
+                            <div className="nm-icon"><img src={msg} alt="" /></div>
+                            <div className="nx-icon"><img src={x} alt="" /></div>
+                            <div className="ngram-icon"><img src={telegram} alt="" /></div>
                         </div>
                     </div>
                     <div className="n-2">
