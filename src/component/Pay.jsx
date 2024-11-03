@@ -9,7 +9,8 @@ export const Pay = () => {
     return (
         <div className='pay-container'>
             <div className="pay-wrap">
-                <div className="pay-btn">Affiliations</div>
+                <div className="pay-btn-wrap"><div className="pay-btn">Affiliations</div></div>
+                
                 <div className="pay-header">Pay any service instantly for your personal use</div>
                 <div className="pay-icons">
                     <div className="pay-1">

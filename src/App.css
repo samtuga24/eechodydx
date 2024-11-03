@@ -33,10 +33,32 @@
   font-family: Montserrat;
   src: local('Jakarta-bold'), url(./fonts/Montserrat/Montserrat-Bold.ttf) format('truetype');
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
 
 body{
   margin: 0;
   overflow-x: hidden;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 @keyframes bounce {
   from {
@@ -213,44 +235,44 @@ body{
   width: 340px;
 }
 .main img{
-
 }
 .white{
-
-  height: 160px;
-  width: 263px;
+  height: 250px;
+  width: 400px;
   position: absolute;
-  left: -100px;
+  left: -120px;
+  top: 30px;
 }
 .white img{
 
 }
 .green{
   left: -100px;
-  height: 177px;
-  width: 246px;
+  height: 250px;
+  width: 400px;
   position: absolute;
-  bottom: 80px;
+  bottom: 10px;
 }
 .green img{
 
 }
 .purple{
-  height: 172px;
-  width: 282px;
+  height: 300px;
+  width: 400px;
   position: absolute;
-  right: 0;
-  bottom: 150px;
+  right: -80px;
+  bottom: 5px;
 }
 .purple img{
 
 }
 
 .cc{
-  height: 187px;
-  width: 308px;
+  height: 300px;
+  width: 400px;
   position: absolute;
-  right: -80px;
+  top: 20px;
+  right: -180px;
 }
 .cc img{
 }
@@ -296,7 +318,7 @@ body{
 
 .nav-container{
   height: 12vh;
-  width: 90%;
+  width: 100%;
   display: flex;
   flex: 5;
   position: fixed;
@@ -474,17 +496,21 @@ body{
   width: 350px;
 }
 .pay-container{
-  height: 277px;
+  height: 300px;
   background-image: linear-gradient(#7006AD, #420466);
-  padding-top: 20px;
   padding-bottom: 10px;
+  padding-top: 20px;
 }
 .pay-wrap{
   position: relative;
   padding-left: 2.5%;
-  height: 277px;
+  height: 280px;
   padding-right: 2.5%;
-
+}
+.pay-btn-wrap{
+  height: 100px;
+  display: flex;
+  align-items: center;
 }
 .pay-btn{
   width: 91px;
@@ -503,7 +529,7 @@ body{
   width: 50%;
   font-family: Jakarta-semi;
   font-size: 42px;
-  margin-top: 50px;
+  margin-top: 0px;
   color: #FFFFFF;
 }
 .pay-icons{
@@ -808,7 +834,7 @@ textarea{
 }
 .lock-1{
   width: 49%;
-  height: auto;
+  height: 900px;
   border-radius: 64px;
   background-color: #6A06A3;
   color: #FFFFFF;
@@ -819,7 +845,7 @@ textarea{
 .unlock-head{
   width: 505px;
   font-family: Jakarta-extra;
-  font-size: 80px;
+  font-size: 85px;
   padding-left: 30px;
 }
 .unlock-image-wrap{
@@ -838,16 +864,16 @@ textarea{
 }
 .lock-2{
   width: 49%;
-  height: auto;
+  height: 900px;
   border-radius: 64px;
   padding-top: 80px;
   background-color: #15191D;
 }
 
 .unlock-2-head{
-  width: 90%;
+  width: 100%;
   font-family: Jakarta-extra;
-  font-size: 68px;
+  font-size: 70px;
   padding-left: 5%;
   padding-right: 5%;
   color: #FFFFFF;
@@ -932,14 +958,14 @@ textarea{
   position: relative;
 }
 .bills-container{
-  height: 1300px;
+  height: 1500px;
   display: flex;
   justify-content: center;
   padding-bottom: 100px;
 }
 .bills-wrap{
   width: 90%;
-  height: 1300px;
+  height: 1500px;
 }
 .bills-header{
   width: fit-content;
@@ -954,7 +980,7 @@ textarea{
 .n-1{
   width: 49%;
   margin-right: 2%;
-  height: 800px;
+  height: 900px;
   border-radius: 40px;
   padding-top: 60px;
   background-color: #F1F2F4;
@@ -1050,12 +1076,11 @@ textarea{
 }
 .n-2{
   width: 49%;
-  height: 800px;
+  height: 900px;
   border-radius: 40px;
-  padding-top: 60px;
+  padding-top: 120px;
   line-height: 120px;
   background-image: linear-gradient(#31FFB4, #56037C);
-
 }
 .c-card-container{
   height: auto;
@@ -1410,6 +1435,7 @@ textarea{
   justify-content: center;
   cursor: default;
   z-index: 1;
+  padding-top: 50px;
 }
 
 .foot-wrap{
