@@ -14,15 +14,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 export const Bills = () => {
-    gsap.registerPlugin(useGSAP,ScrollTrigger);
-    const tl = gsap.timeline({
-        scrollTrigger:{
-            trigger: ".bills-wrap",
-            toggleActions: "restart none none none",
-        }
-    });
-    tl.fromTo('.n-1, .n-2',{y: '100vw'},{ y: '0vw', ease: "power4.inOut",stagger:0.2,duration: 2.2 })
-    tl.fromTo('.bills-header',{x: '-100vw'},{ x: '0vw', ease: "power4.inOut",stagger:0.2,duration: 1 },'<')
+  gsap.registerPlugin(useGSAP,ScrollTrigger);
+      useGSAP(()=>{
+      gsap.timeline({
+            scrollTrigger:{
+          trigger: ".bills-wrap",
+          toggleActions: "restart none none none",
+      }
+      }) .fromTo('.n-1, .n-2',{y: '100vw'},{ y: '0vw', ease: "power4.inOut",stagger:0.2,duration: 2.2 })
+         .fromTo('.bills-header',{x: '-100vw'},{ x: '0vw', ease: "power4.inOut",stagger:0.2,duration: 1 },'<')
+    })
+
 
     return (
         <div className='bills-container'>

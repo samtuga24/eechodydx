@@ -17,13 +17,15 @@ export const Unlock = () => {
   // }, [])
 
   gsap.registerPlugin(useGSAP,ScrollTrigger);
-  const tl = gsap.timeline({
-      scrollTrigger:{
-          trigger: ".unlock-container",
+      useGSAP(()=>{
+      gsap.timeline({
+            scrollTrigger:{
+          trigger: ".unlock-wrap",
           toggleActions: "restart none none none",
       }
-  });
-  tl.fromTo('.lock-1, .lock-2',{y: '100vw'},{ y: '0vw', ease: "power4.inOut",stagger:0.2,duration: 1.5 })
+      }).fromTo('.lock-1, .lock-2',{y: '100vw'},{ y: '0vw', ease: "power4.inOut",stagger:0.2,duration: 1.5 })
+    })
+
   
   return (
     <div className='unlock-container'>

@@ -6,31 +6,24 @@ export const Contact = () => {
   const phoneRef = useRef(null)
   const messageRef = useRef(null)
 
-  const [first, setFirst] = useState(true)
-  const [second, setSecond] = useState(false)
-  const [third, setThird] = useState(false)
-  const firstFunc =()=>{
-    setFirst(true)
-    setSecond(false)
-    setThird(false)
-  }
+  const placeholderHighlight = ["one", "two", "three"];
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const timer = () => {
+      setIndex(prevIndex => {
+        if (prevIndex === placeholderHighlight.length-1) {
+          return 0;
+        }
+        return prevIndex + 1;
+      })
 
-  const secondFunc =()=>{
-    setFirst(false)
-    setSecond(true)
-    setThird(false)
-  }
+    };
+    setInterval(timer, 3000);
+    return () => { clearInterval(timer); }
+  }, [])
 
-  const thirdFunc =()=>{
-    setFirst(false)
-    setSecond(false)
-    setThird(true)
-  }
-  useEffect(()=>{
-    setTimeout(firstFunc,2000)
-    setTimeout(secondFunc,4000)
-    setTimeout(thirdFunc,6000)
-  },[])
+console.log(index)
+
 
   return (
     <div className='contact-container' id='contact'>
@@ -42,12 +35,12 @@ export const Contact = () => {
             <div className='team-desc'>
               <div className='desc-wrap'>
                 <div className='team-num'>
-                  <div className='t-1' id={first ? 'bg' : null}>1</div>
+                  <div className='t-1' id={index == 0 ? 'bg' : null}>1</div>
                 </div>
                 <div className='team-text'>
-                  
-                  <div className='t-header' id={first ? 'active-h' : null}>Contact Our Team</div>
-                  <div className='t-desc' id={first ? 'active-desc' : null}>We're here for you! Whether you're starting out or need support, our team is ready to assist. Reach out for personalized guidance and get quick answers to your questions.</div>
+
+                  <div className='t-header' id={index == 0  ? 'active-h' : null}>Contact Our Team</div>
+                  <div className='t-desc' id={index == 0  ? 'active-desc' : null}>We're here for you! Whether you're starting out or need support, our team is ready to assist. Reach out for personalized guidance and get quick answers to your questions.</div>
                 </div>
                 <div className="side-margin"></div>
               </div>
@@ -56,11 +49,11 @@ export const Contact = () => {
             <div className='team-desc'>
               <div className='desc-wrap'>
                 <div className='team-num'>
-                  <div className='t-1'  id={second ? 'bg' : null}>2</div>
+                  <div className='t-1' id={index == 1  ? 'bg' : null}>2</div>
                 </div>
                 <div className='team-text'>
-                  <div className='t-header'  id={second ? 'active-h' : null}>Your Card Solution</div>
-                  <div className='t-desc'  id={second ? 'active-desc' : null}>Get the card that fits your needs—whether for personal or business use. Our solutions offer security, flexibility, and global access.</div>
+                  <div className='t-header' id={index == 1  ? 'active-h' : null}>Your Card Solution</div>
+                  <div className='t-desc' id={index == 1 ? 'active-desc' : null}>Get the card that fits your needs—whether for personal or business use. Our solutions offer security, flexibility, and global access.</div>
                 </div>
               </div>
             </div>
@@ -68,12 +61,12 @@ export const Contact = () => {
             <div className='team-desc'>
               <div className='desc-wrap'>
                 <div className='team-num'>
-                  <div className='t-1'  id={third ? 'bg' : null}>3</div>
+                  <div className='t-1' id={index == 2 ? 'bg' : null}>3</div>
                 </div>
                 <div className='team-text'>
-                  <div className='t-header' id={third ? 'active-h' : null}>Complete Verification and Activate Solution</div>
-                  <div className='t-desc' id={third ? 'active-h' : null}>Quick and easy setup! Complete your verification and activate your card in just a few steps.
-                    <div className='t-step'  id={third ? 'active-desc' : null}>
+                  <div className='t-header' id={index == 2 ? 'active-h' : null}>Complete Verification and Activate Solution</div>
+                  <div className='t-desc' id={index == 2 ? 'active-h' : null}>Quick and easy setup! Complete your verification and activate your card in just a few steps.
+                    <div className='t-step' id={index == 2 ? 'active-desc' : null}>
                       <ul><li>Step 1: Submit your details.</li></ul>
                       <ul><li>Step 2: Securely verify your identity.</li></ul>
                       <ul><li>Step 3: Activate and start using your card immediately!</li></ul>
@@ -81,7 +74,7 @@ export const Contact = () => {
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </div>
           <div className='contact-form'>
