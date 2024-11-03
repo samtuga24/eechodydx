@@ -7,7 +7,7 @@ import arrow from '../icons/arrow.png'
 import cc from '../images/cc.png'
 import white from '../images/white.png'
 import purple from '../images/purple.png'
-import green from '../images/1.png'
+import green from '../images/one.png'
 import main from '../images/main.png'
 export const Home = () => {
   // const tl = gsap.timeline()
