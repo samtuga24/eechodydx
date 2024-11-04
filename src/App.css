@@ -337,7 +337,7 @@ html {
   display: flex;
   flex: 5;
   position: fixed;
-  z-index: 1;
+  z-index: 4;
   background-color: #FFFFFF;
   top: 0;
   padding-left: 5%;
@@ -582,13 +582,12 @@ html {
 }
 
 .yt{
-  width: 254px;
+  width: 15vw;
   height: 58px;
   margin-right: 20px;
   position: absolute;
-  left: 256px;
+  left: 18vw;
   margin-left: 30px;
-
 }
 .yt img{
   width: 100%;
@@ -607,7 +606,7 @@ html {
   height: 100%;
 }
 .gram{
-  width: 128px;
+  width: 10vw;
   height: 128px;
   position: absolute;
   bottom: 0;
@@ -618,9 +617,10 @@ html {
   height: 100%;
 }
 .flix{
-  width: 171px;
+  width: 12vw;
   height: 48px;
   position: absolute;
+  left: 18vw;
 }
 .flix img{
   width: 100%;
@@ -1228,51 +1228,23 @@ textarea{
   align-items: center;
   justify-content: center; */
   position: relative;
-  height: 100vh;
+  height: 900px;
   width: 100%;
 }
 .cards{
-  width: inherit;
+  width: 62%;
   height: inherit;
   position: absolute;
-  height: 800px;
+  height: 711px;
   bottom: 0;
   top: 10px;
+  right: 15vw;
 }
-.card-1{
-  width: 35vw;
-  height: fit-content;
-  position: absolute;
-  top: 0;
-  z-index: 3;
-  left: 250px;
-}
-.card-2{
-  width: 35vw;
-  height: fit-content;
-  position: absolute;
-  top: 150px;
-  left: 350px;
-  z-index: 2;
-}
-.card-3{
-  width: 35vw;
-  height: fit-content;
-  position: absolute;
-  top: 350px;
-  left:520px;
-  z-index: 1;
-}
-.card-1 img{
+.cards img{
   width: 100%;
   height: 100%;
 }
-.card-2 img{
-  width: 100%;
-}
-.card-3 img{
-  width: 100%;
-}
+
 .seamless{
   position: absolute;
   right: 0;

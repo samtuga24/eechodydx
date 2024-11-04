@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import check from '../icons/check.png'
-import card1 from '../images/1.png'
-import card2 from '../images/2.png'
-import card3 from '../images/3.png'
+import cards from '../images/cards.png'
 import arrow from '../icons/arrow.png'
 import { MobileCards } from './MobileCards'
 import m1 from '../images/m1.png'
@@ -35,9 +33,7 @@ export const ChooseCard = () => {
                 </div>
                 <div className='cards-container'>
                     <div className='cards'>
-                        <div className='card-1'><img src={card1} alt="" /></div>
-                        <div className='card-2'><img src={card3} alt="" /></div>
-                        <div className='card-3'><img src={card2} alt="" /></div>
+                        <img src={cards} alt="" />
                     </div>
                 </div>
                 
