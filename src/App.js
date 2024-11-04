@@ -15,6 +15,7 @@ import { Pay } from './component/Pay';
 import { gsap } from 'gsap'
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MobileCards } from './component/MobileCards';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <Home />
       <Cards/>
       <Choose/>
+      <MobileCards/>
       <Bills />
       <Contact/>
       <Pay/>

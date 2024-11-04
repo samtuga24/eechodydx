@@ -22,6 +22,7 @@ export const Home = () => {
           <div className='m-wrap'>
             <div className='m-header'>Cards Designed For Marketing Campaigns And Everyday Purchases.</div>
             <div className='m-desc'>Your Trusted Partner in Prepaid Cards for all your online payment.</div>
+            <div className="mobile-home-desc">Your Trusted Partner in Prepaid Cards. Create your virtual cards hassle-free, anytime, anywhere for all your online payment.</div>
           </div>
         </div>
         <div className='user-container'>
@@ -53,6 +54,9 @@ export const Home = () => {
           <div className="green"><img src={green} alt="" /></div>
           <div className="purple"><img src={purple} alt="" /></div>
           <div className="cc"><img src={cc} alt="" /></div>
+        </div>
+        <div className="mobile-home-img">
+          <img src={main} alt="" />
         </div>
       </div>
     </div>

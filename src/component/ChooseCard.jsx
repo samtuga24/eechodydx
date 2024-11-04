@@ -4,9 +4,12 @@ import card1 from '../images/1.png'
 import card2 from '../images/2.png'
 import card3 from '../images/3.png'
 import arrow from '../icons/arrow.png'
+import { MobileCards } from './MobileCards'
+import m1 from '../images/m1.png'
+import m2 from '../images/m2.png'
+import m3 from '../images/m3.png'
 export const ChooseCard = () => {
 
-    
     return (
         <div className='c-card-container'>
             <div className='c-card-header'>Choose your<span className='span-card'> Card</span></div>
@@ -37,6 +40,8 @@ export const ChooseCard = () => {
                         <div className='card-3'><img src={card2} alt="" /></div>
                     </div>
                 </div>
+                
+                
                 <div className='seamless'>
                     <div className='s-header'>Seamless Spending, Boundless Opportunities with Alphaspace!</div>
                     <div className='s-list-1-wrap'>
@@ -57,7 +62,7 @@ export const ChooseCard = () => {
                     </div>
                     
                 </div>
-                
+                <div className="mobile-cc"><MobileCards/></div>
             </div>
             <div className='contact-sales'>
                 <div className='c-s'>Contact sales</div>
